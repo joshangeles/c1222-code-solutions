@@ -1,0 +1,12 @@
+body {
+  font-family: 'Raleway',
+      sans-serif;
+      line-height: 30px;
+}
+
+h1, h2 {
+  font-family: 'Zen Dots',
+    sans-serif;
+    line-height: 30px;
+    font-weight: bold;
+}
