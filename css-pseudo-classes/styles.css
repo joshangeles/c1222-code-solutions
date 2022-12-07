@@ -1,0 +1,14 @@
+button:hover {
+  cursor: grab;
+  background-color: black;
+  color: white;
+}
+
+thead {
+  color: white;
+  background: black;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: lightgrey;
+}
