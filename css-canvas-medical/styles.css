@@ -1,0 +1,138 @@
+html {
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: #b1b1b1;
+  font-weight: 600;
+}
+
+.avenir {
+  font-family: Avenir, sans-serif;
+}
+
+.headline {
+  font-family: "Tiempos Headline", serif;
+}
+
+.pt-half {
+  padding-top: 50%;
+}
+
+.pl-2 {
+  padding-left: 2rem;
+}
+
+.pl-4 {
+  padding-left: 4rem;
+}
+
+.pl-6 {
+  padding-left: 6rem;
+}
+
+.pl-8 {
+  padding-left: 8rem;
+}
+
+.pr-2 {
+  padding-right: 2rem;
+}
+
+.pr-4 {
+  padding-right: 4rem;
+}
+
+.pr-6 {
+  padding-right: 6rem;
+}
+
+.pr-8 {
+  padding-right: 8rem;
+}
+
+.container {
+  margin: auto;
+  max-width: 1280px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-full {
+  width: 100%;
+}
+
+.col-half {
+  width: 50%;
+}
+
+.col-third {
+  width: calc(100%/3);
+}
+
+.col-fifth {
+  width: 20%;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.ta-center {
+  text-align: center;
+}
+
+.ta-start {
+  text-align: start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.button {
+  background: #294464;
+  color: white;
+  border-radius: 0.3rem;
+  height: 2rem;
+  width: 6rem;
+}
+
+#gray {
+  background-color: #525351;
+}
+
+#lightgray {
+  background-color: #fafafa;
+}
+
+#nav {
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: rgb(244 245 246);
+  border-style: solid;
+  border-width: 100%;
+  margin: 0;
+  background-color: white;
+}
+
+.indent {
+  padding: 2rem 8rem;
+}
