@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,99 +10,136 @@
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="container">
-    <div class="row" id="nav"> <!--navigation bar-->
-      <div class="col-half indent">
-        <img src="images/logo-blue.svg">
+    <div class="row pt-1 pb-1 ta-center" id="nav">
+      <!--navigation bar-->
+      <div class="col-half">
+        <img class="logo" id="bluelogo" src="images/logo-blue.svg">
       </div>
       <div class="col-half avenir">
-        <div class="row">
-          <div class="col-fifth ta-center">
-            <a href="#">Product</a>
+        <div class="row relative left-three-halves">
+          <div class="col-fifth ta-center relative" id="productnav">
+            <small>
+              <a href="#">Product</a>
+            </small>
+          </div>
+          <div class="col-fifth ta-center relative" id="implementationnav">
+            <small>
+              <a href="#">Implementation</a>
+            </small>
+          </div>
+          <div class="col-fifth ta-center relative top-05">
+            <small>
+              <a href="#">About Us</a>
+            </small>
+          </div>
+          <div class="col-fifth ta-center relative top-05">
+            <small>
+              <a href="#">Blog</a>
+            </small>
           </div>
           <div class="col-fifth ta-center">
-            <a href="#">Implementation</a>
-          </div>
-          <div class="col-fifth ta-center">
-            <a href="#">About Us</a>
-          </div>
-          <div class="col-fifth ta-center">
-            <a href="#">Blog</a>
-          </div>
-          <div class="col-fifth ta-center">
-            <button class="button">
+            <button class="button" id="navbutton">
               Contact Us
             </button>
           </div>
         </div>
       </div>
     </div>
-    <div class="row"> <!--hero image-->
+    <div class="row">
+      <!--hero image-->
       <div class="col-full">
-        <img src="images/hero.jpg">
+        <div id="gradient">
+        </div>
+        <div class="relative text-white" id="herotext">
+          <h1 class="headline letterspacing">
+            The EMR Reimagined for <br />
+            Primary Care
+          </h1>
+          <small class="double-space avenir">
+            Can't remember the last time you talked with a patient without focusing <br />
+            on the EMR? Canvas lets you rediscover joy in the work you do. Capture <br />
+            meaningful data, identify gaps in care, and move seamlessly between <br />
+            tasks within the platform. You stay present with patients while your <br />
+            whole care team stays up-to-speed. Be a better doctor with Canvas, <br />
+            designed for primary care providers with the help of primary care <br />
+            providers.
+          </small>
+        </div>
+        <button class="button relative" id="herobutton">Get Started</button>
       </div>
     </div>
-    <div class="row"> <!--clinicians prefer-->
-      <div class="col-full avenir">
-        <h1>Clinicians prefer canvas</h1>
-        <p>Physician-owned primary care practices across the country have <br />
+    <div class="row">
+      <!--clinicians prefer-->
+      <div class="col-full ta-center lightgray pb-1 pt-4">
+        <h2 class="headline">Clinicians Prefer Canvas</h2>
+        <p class="double-space avenir">Physician-owned primary care practices across the country have <br />
           already made Canvas the fabric of their care.</p>
       </div>
     </div>
-    <div class="row"> <!--clinicians location list-->
+    <div class="row lightgray avenir ta-center" id="location">
+      <!--clinicians location list-->
       <div class="col-half">
-        <h3>Cascade Family practice, Portland OR</h3>
-        <h3>Temescal Creek Medicine, Oakland CA</h3>
-        <h3>San Juan Healthcare, Friday Harbor WA</h3>
+        <h4>Cascade Family practice, Portland OR <br />
+          Temescal Creek Medicine, Oakland CA <br />
+          San Juan Healthcare, Friday Harbor WA
+        </h4>
       </div>
       <div class="col-half">
-        <h3>Ward Medical Clinic, Bonifay FL</h3>
-        <h3>Caribou Medical, Towanda PA</h3>
-        <h3>Bay Tree Family Care, Red Bay AL</h3>
-      </div>
-    </div>
-    <div class="row"> <!--learn more bar-->
-      <div class="col-half">
-        <h1>Ready to learn more?</h1>
-      </div>
-      <div class="col-half">
-        <button>Get Started</button>
+        <h4>Ward Medical Clinic, Bonifay FL <br />
+          Caribou Medical, Towanda PA <br />
+          Bay Tree Family Care, Red Bay AL
+        </h4>
       </div>
     </div>
-    <div class="row"> <!--canvas bottom-->
-      <div class="col-half"> <!--bottom logo-->
-        <img src="images/logo-white.png">
-        <p>
-          2307 Irving Ave, Suite 228 <br/ >
+    <div class="row pb-2 ta-center relative">
+      <!--learn more bar-->
+      <div class="col-half">
+        <h2 class="headline">Ready to learn more?</h2>
+        <p class="avenir"> Schedule a private meeting now </p>
+      </div>
+      <div class="col-half">
+        <button class="avenir" id="readybutton">Get Started</button>
+      </div>
+    </div>
+    <div class="row gray text-white avenir padding-4">
+      <!--canvas bottom-->
+      <div class="col-third bottom relative">
+        <!--bottom logo-->
+        <img class="logo pb-3" src="images/logo-white.png">
+        <small>
+          2307 Irving Ave, Suite 228 <br />
           San Francisco CA 94122 <br />
           (800) 370-1416 <br />
           info@canvasmedical.com <br />
-        </p>
+        </small>
       </div>
-      <div class="col-half"> <!--company/product-->
-        <div class="col-half">
-          <h3>COMPANY</h3>
-          <h4>About Us</h4>
-          <h4>Blog</h4>
-        </div>
-        <div class="col-half">
-          <h3>PRODUCT</h3>
-          <h4>Product</h4>
-          <h4>Implementation</h4>
-          <h4>For Health Plans</h4>
-          <h4>Security</h4>
-        </div>
+      <div class="col-third ta-center">
+        <!--company/product-->
+        <p>COMPANY</p>
+        <p>About Us</p>
+        <p>Blog</p>
+      </div>
+      <div class="col-third ta-center">
+        <p>PRODUCT</p>
+        <p>Product</p>
+        <p>Implementation</p>
+        <p>For Health Plans</p>
+        <p>Security</p>
       </div>
     </div>
-    <div class="row"> <!--canvas footer-->
-      <div class="col-half avenir">
-        <a href="#">Privacy &amp; Terms</a>
-        <a href="#">Contact Us</a>
+    <div class="row">
+      <!--canvas footer-->
+      <div class="col-half avenir pt-2 pb-2">
+        <small><a href="#" class="text-black" id="privacy">Privacy &amp; Terms</a></small>
+        <small><a href="#" class="text-black">Contact Us</a></small>
       </div>
     </div>
   </div>
-    </div>
+  </div>
+  </div>
   </div>
 </body>
 </html>
