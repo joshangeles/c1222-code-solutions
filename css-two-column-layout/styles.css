@@ -19,14 +19,10 @@
 
 .col-fourth {
   width: 25%;
-  text-align: right;
-  padding-right: 0;
 }
 
 .col-three-fourths {
   width: 75%;
-  align-items: right;
-  text-align: left;
 }
 
 .margintop {
@@ -81,5 +77,5 @@ button {
 }
 
 #learnmore {
-  margin-left: 425px;
+  text-align: center;
 }
