@@ -2,9 +2,18 @@ body {
   font-family: Barlow, sans-serif;
 }
 
+h1 {
+  font-size: 300%;
+}
+
+h2 {
+  position: relative;
+  bottom: 1rem;
+}
+
 .container {
   margin: auto;
-  max-width: 100%;
+  max-width: auto;
 }
 
 .row {
@@ -21,4 +30,22 @@ body {
 
 .text-align-center {
   text-align: center;
+}
+
+.resize-icon {
+  height: auto;
+  width: 25%;
+}
+
+.resize-screen {
+  height: auto;
+  width: 85%;
+}
+
+.gray-background {
+  background-color: #f7f8fa;
+}
+
+.margin-bottom {
+  margin-bottom: 2rem;
 }
