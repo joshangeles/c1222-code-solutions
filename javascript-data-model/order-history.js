@@ -8,6 +8,7 @@ var orderHistory = [
     itemInformation:
   [
     {
+      type: 'book',
       title: 'JavaScript for impatient programmers',
       seller: 'Rauschmayer, Dr. Axel',
       price: 31.55,
@@ -23,6 +24,7 @@ var orderHistory = [
     orderNumber: '113-9984268-1280257',
     itemInformation: [
       {
+        type: 'book',
         title: 'The Timeless Way of Building',
         seller: 'Alexander, Christopher',
         price: 44.53,
@@ -38,7 +40,8 @@ var orderHistory = [
     orderNumber: '114-2875557-9059409',
     itemInformation: [
       {
-        title: 'Gamecube Controller Adapter. Super Smash Bros Switch Gamecube Adapter for WII U, PC. Support Turbo and Vibration Features. No Driver and No Lag-Gamecube Adapter',
+        type: 'hardware',
+        name: 'Gamecube Controller Adapter. Super Smash Bros Switch Gamecube Adapter for WII U, PC. Support Turbo and Vibration Features. No Driver and No Lag-Gamecube Adapter',
         seller: 'noneListed',
         price: 17.22,
         image: 'controller adapter thumbnail',
@@ -54,15 +57,17 @@ var orderHistory = [
     orderNumber: '113-2883177-2648248',
     itemInformation: [
       {
-        title: 'GameCube Controller - Super Smash Bros. Edition (Nintendo Switch)',
+        type: 'hardware',
+        name: 'GameCube Controller - Super Smash Bros. Edition (Nintendo Switch)',
         seller: 'noneListed',
         price: 94.95,
         image: 'Gamecube Controller Box',
         lastReturnDate: '8/4/2020'
       },
       {
+        type: 'book',
         title: 'The Art of Sql',
-        seller: 'Faroult, Stephanie',
+        author: 'Faroult, Stephanie',
         price: 33.99,
         image: 'bookcover',
         lastReturnDate: '8/4/2020'
