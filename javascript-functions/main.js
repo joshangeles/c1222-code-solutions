@@ -22,7 +22,7 @@ function getFirstName(person) {
   return { firstName, lastName };
 }
 var extractedName = getFirstName({ firstName: 'Josh', lastName: 'Angeles' });
-console.log('The person\'s first name is: ' + extractedName.firstName);
+console.log(extractedName.firstName + ' ' + extractedName.lastName + '\'s first name is: ' + extractedName.firstName);
 
 function getLastElement(array) {
   var lastElementIndex = array.length - 1;
