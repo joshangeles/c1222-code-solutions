@@ -65,3 +65,13 @@ function categorizeAcidity(pH) {
     return 'Invalid pH level!';
   }
 }
+
+function introduceWarnerBro(name) {
+  if (name === 'yakko' || name === 'wakko') {
+    return 'We\'re the Warner brothers';
+  } else if (name === 'dot') {
+    return 'I\'m cute~';
+  } else {
+    return 'Goodnight everybody!';
+  }
+}
