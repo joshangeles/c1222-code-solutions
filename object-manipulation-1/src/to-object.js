@@ -5,5 +5,6 @@
    use bracket or dot notation to add key value pair to empty object */
 function toObject(keyValuePair) {
   var object = {};
-  object.keyValuePair[0] = 1;
+  object[keyValuePair[0]] = keyValuePair[1];
+  return object;
 }
