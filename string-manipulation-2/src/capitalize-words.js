@@ -5,12 +5,20 @@
    Run another loop using saved index and continue process of collecting characters and pushing to array
    Use array.join() method and combine collected characters after end of string is found */
 function capitalizeWords(string) {
-/*   var capitalizedWords = [];
-  var capitalizedWord = '';
-  for (var i = 0; i < string.length; i++) {
-    if (i === ' ') {
-      break;
+  var editedString = '';
+  var wordArray = [];
+  editedString += string[0].toUpperCase();
+  for (var i = 1; i < string.length; i++) {
+    if (string[i] !== ' ') {
+      editedString += string[i];
     }
-    capitalizedWord = string[0].toUpper;
-  } */
+    if (string[i] === ' ') {
+      wordArray.push(editedString);
+      editedString = '';
+      i++;
+    }
+  }
+  if (i === string.length) {
+    return wordArray.join(' ');
+  }
 }
