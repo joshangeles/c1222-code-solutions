@@ -1,24 +1,14 @@
 /* exported capitalizeWords */
-/* Make storage for edited string
-   Go through each character of string and use toUpperCase() method on first character until space is found
-   When space is found, push collected characters into empty array, save what index it is at, and end loop
-   Run another loop using saved index and continue process of collecting characters and pushing to array
-   Use array.join() method and combine collected characters after end of string is found */
+/* Use split() method on string to separate each word into a new array
+   Use toLowerCase() method to ensure all characters are lowercased (in case of ransomCase or something) before trying to capitalize
+   Go through each index of array and capitalize the first character with the toUpperCase() method
+   Reassign the combination of the capitalized first character of each word with the rest of the word's characters to that index (look into slice method)
+   Use the array join() property to form the fully capitalized sentence */
 function capitalizeWords(string) {
-  var editedString = '';
-  var wordArray = [];
-  editedString += string[0].toUpperCase();
-  for (var i = 1; i < string.length; i++) {
-    if (string[i] !== ' ') {
-      editedString += string[i];
-    }
-    if (string[i] === ' ') {
-      wordArray.push(editedString);
-      editedString = '';
-      i++;
-    }
+  var separatedWords = string.split(' ');
+  for (var i = 0; i < separatedWords.length; i++) {
+    separatedWords[i] = separatedWords[i].toLowerCase();
+    separatedWords[i] = separatedWords[i][0].toUpperCase() + separatedWords[i].slice(1);
   }
-  if (i === string.length) {
-    return wordArray.join(' ');
-  }
+  return separatedWords.join(' ');
 }
