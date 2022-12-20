@@ -1,17 +1,14 @@
 /* exported omit */
-/* Make empty storage object
-   Go through each key input source object
-   Check if key found in input source object matches any of the input keys
-   If it does not match then use bracket notation to add it to the storage object
-   Return the storage object
+/*  Go through each property found in input source object
+    Check if each found property includes any of the input keys -use includes() method to simply matching input keys to found property
+    If it does not match any of the input keys, push it into an empty storage object
+    Return the filled storage object
    */
 function omit(source, keys) {
   var omitted = {};
-  for (var key in source) {
-    for (var i = 0; i < keys.length; i++) {
-      if (key !== keys[i]) {
-        omitted[keys[i]] = source[keys[i]];
-      }
+  for (var property in source) {
+    if (keys.includes(property) === false) {
+      omitted[property] = source[property];
     }
   }
   return omitted;
