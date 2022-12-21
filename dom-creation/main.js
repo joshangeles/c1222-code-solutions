@@ -56,9 +56,8 @@ var pokedex = [
     imageUrl: 'images/blastoise.png'
   }
 ];
-var columnThird;
 function renderPokemon(pokemon) {
-  columnThird = document.createElement('div');
+  var columnThird = document.createElement('div');
   var pokemonCard = document.createElement('div');
   var pokemonImage = document.createElement('img');
   var pokemonCardText = document.createElement('div');
@@ -80,8 +79,9 @@ function renderPokemon(pokemon) {
   pokemonDescription.textContent = pokemon.description;
   return columnThird;
 }
+
 var row = document.querySelector('.row');
 for (var i = 0; i < pokedex.length; i++) {
-  renderPokemon(pokedex[i]);
-  row.appendChild(columnThird);
+  var domTree = renderPokemon(pokedex[i]);
+  row.appendChild(domTree);
 }
