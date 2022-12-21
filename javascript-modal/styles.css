@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.container {
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.border-radius-round {
+  border-radius: 10%;
+}
+
+.text-white {
+  color: white;
+}
+
+#open-modal {
+  background-color: lightblue;
+  height: 10vh;
+  width: 10vw;
+  font-size: larger;
+  margin-left: 2vw;
+  margin-top: 3vh;
+}
