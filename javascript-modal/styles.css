@@ -42,6 +42,10 @@ button:hover {
   background-color: white;
 }
 
+.shift-down {
+  transform: translateY(0.3rem);
+}
+
 #open-modal {
   background-color: #4a4ae9df;
   height: 2.5rem;
@@ -67,14 +71,14 @@ button:hover {
 }
 
 #modal-button {
-  transform: translateY(2rem);
+  transform: translateY(3.5rem);
   background-color: #eb5d5d;
   border: transparent;
   border-radius: 0.2rem;
   height: 25%;
-  width: 15%;
+  width: 20%;
   font-weight: normal;
-  font-size: larger;
+  font-size: x-large;
   box-shadow: 0 0.15rem rgb(0 0 0 / 56.8%);
 }
 
