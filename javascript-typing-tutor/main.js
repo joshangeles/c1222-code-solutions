@@ -13,13 +13,13 @@ function characterHandler(event) {
       console.log('key u pressed same as current character congratz lol');
       $characters[currentCharacter].className += ' green';
       if ($characters[currentCharacter].className.includes('underline')) {
-        $characters[currentCharacter].className = 'green';
+        $characters[currentCharacter].className = 'green whitespace-pre';
       }
       currentCharacter++;
-      $characters[currentCharacter].className = 'underline';
+      $characters[currentCharacter].className = 'underline whitespace-pre';
     }
   } else {
-    // dont increment da currentcharacter and make it gross n red n underlined lol
+    $characters[currentCharacter].className += ' red';
   }
   return currentCharacter;
 }
