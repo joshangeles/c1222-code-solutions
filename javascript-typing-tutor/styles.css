@@ -41,6 +41,10 @@ span {
   top: 45vh;
 }
 
+.whitespace-pre {
+  white-space: pre;
+}
+
 .underline { /* add this class on current character to type */
   text-decoration: underline;
   text-underline-position: under;
