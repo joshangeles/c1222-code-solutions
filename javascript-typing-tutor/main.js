@@ -8,6 +8,14 @@ Use $characters[i].textContent to extract character string from it
 var $characters = document.querySelectorAll('span');
 var currentCharacter = 0;
 function characterHandler(event) {
+  if (currentCharacter === $characters.length) {
+    window.alert('You passed! Press Enter to Reset!');
+    currentCharacter = 0;
+    $characters[0].className = 'underline';
+    for (var i = 1; i < $characters.length; i++) {
+      $characters[i].className = 'whitespace-pre';
+    }
+  }
   if (event.key === $characters[currentCharacter].textContent) {
     if (currentCharacter < $characters.length) {
       console.log('key u pressed same as current character congratz lol');
@@ -21,6 +29,5 @@ function characterHandler(event) {
   } else {
     $characters[currentCharacter].className += ' red';
   }
-  return currentCharacter;
 }
 document.addEventListener('keydown', characterHandler);
