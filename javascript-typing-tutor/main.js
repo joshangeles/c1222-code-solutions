@@ -11,7 +11,7 @@ function characterHandler(event) {
   if (currentCharacter === $characters.length) {
     window.alert('You passed! Press Enter to Reset!');
     currentCharacter = 0;
-    $characters[0].className = 'underline';
+    $characters[0].className = 'underline black';
     for (var i = 1; i < $characters.length; i++) {
       $characters[i].className = 'whitespace-pre';
     }
