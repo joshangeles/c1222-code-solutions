@@ -18,7 +18,6 @@ function characterHandler(event) {
   }
   if (event.key === $characters[currentCharacter].textContent) {
     if (currentCharacter < $characters.length) {
-      console.log('key u pressed same as current character congratz lol');
       $characters[currentCharacter].className += ' green';
       if ($characters[currentCharacter].className.includes('underline')) {
         $characters[currentCharacter].className = 'green whitespace-pre';
