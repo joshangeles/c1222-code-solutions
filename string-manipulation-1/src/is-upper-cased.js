@@ -4,8 +4,7 @@
    If the uppercase version is the same as the original word, return true
    If not, return false */
 function isUpperCased(word) {
-  var uppercasedWord;
-  uppercasedWord = word.toUpperCase();
+  var uppercasedWord = word.toUpperCase();
   if (uppercasedWord === word) {
     return true;
   } else {
