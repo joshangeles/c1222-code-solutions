@@ -1,5 +1,5 @@
 function subtract(minuend, subtrahend) {
-  console.log('Result:', (minuend) - (subtrahend));
+  return (minuend) - (subtrahend);
 }
 
 module.exports = subtract;

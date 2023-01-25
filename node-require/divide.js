@@ -1,5 +1,5 @@
 function divide(dividend, divisor) {
-  console.log('Result:', (dividend) / (divisor));
+  return (dividend) / (divisor);
 }
 
 module.exports = divide;

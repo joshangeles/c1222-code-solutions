@@ -1,5 +1,5 @@
 function multiply(multiplicand, multiplier) {
-  console.log('Result:', (multiplicand) * (multiplier));
+  return (multiplicand) * (multiplier);
 }
 
 module.exports = multiply;
