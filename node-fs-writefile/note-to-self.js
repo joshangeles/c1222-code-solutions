@@ -7,8 +7,10 @@ const writeFileButBetter = (data, encoder) => {
 };
 
 fs.readFile('note.txt', 'utf8', (err, data) => {
-  if (err) {
+  try {
     writeFileButBetter('');
+  } catch (error) {
+    throw err;
   }
 
   switch (data) {
