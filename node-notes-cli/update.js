@@ -2,6 +2,10 @@ const data = require('./data.json');
 const fs = require('fs');
 
 function update(id, updatedNote) {
+  if (data.notes[id] === undefined) {
+    console.log('\x1b[36m%s\x1b[0m', `Entry #${id} not found! Does this note exist?`);
+    return;
+  }
   data.notes[id] = updatedNote;
   let updatedData = data;
   updatedData = JSON.stringify(updatedData, null, 2);
