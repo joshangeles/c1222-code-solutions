@@ -1,9 +1,14 @@
 const data = require('./data.json');
+const fs = require('fs');
 
 function create(note) {
-  const newNote = null;
-  newNote.notes[data.nextId] = note;
-  console.log(newNote);
+  data.notes[data.nextId] = note;
+  data.nextId++;
+  let updatedData = data;
+  updatedData = JSON.stringify(updatedData, null, 2);
+  fs.writeFile('data.json', updatedData, 'utf-8', err => {
+    if (err) throw err;
+  });
 }
 
 module.exports = create;
