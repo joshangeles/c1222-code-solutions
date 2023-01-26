@@ -7,10 +7,8 @@ for (let i = 2; i < process.argv.length; i++) {
     if (err) {
       console.log('File not found!');
 
-    } else if (i !== process.argv.length) {
-      cat +=
-      `${data}
-`;
+    } else {
+      cat += ('\n' + data);
     }
     if (i === (process.argv.length - 1)) {
       console.log(cat);
