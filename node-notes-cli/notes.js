@@ -3,11 +3,12 @@ const read = require('./read');
 const update = require('./update');
 const del = require('./delete');
 const passedArgs = process.argv;
+const command = passedArgs[2];
 const note = passedArgs[3];
 const id = passedArgs[3];
 const updatedNote = passedArgs[4];
 
-switch (passedArgs[2]) {
+switch (command) {
   case 'create':
     create(note);
     break;
