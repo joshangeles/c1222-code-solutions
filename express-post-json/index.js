@@ -19,7 +19,7 @@ app.post('/api/grades', (req, res) => {
     req.body.id = nextId;
     grades[nextId] = req.body;
     nextId++;
-    res.json(grades);
+    res.status(201).json(req.body);
   } else {
     res.sendStatus(400);
   }
