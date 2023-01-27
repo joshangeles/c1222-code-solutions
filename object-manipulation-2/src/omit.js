@@ -7,7 +7,7 @@
 function omit(source, keys) {
   var omitted = {};
   for (var property in source) {
-    if (keys.includes(property) === false) {
+    if (!keys.includes(property)) {
       omitted[property] = source[property];
     }
   }
