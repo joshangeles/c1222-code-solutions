@@ -8,8 +8,8 @@ app.use(expressJSON);
 
 app.get('/api/grades', (req, res) => {
   const gradeArray = [];
-  for (const obj in grades) {
-    gradeArray.push(grades[obj]);
+  for (const key in grades) {
+    gradeArray.push(grades[key]);
   }
   res.json(gradeArray);
 });
