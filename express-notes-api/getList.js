@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 function getList(app) {
-  const model = require('./data.json');
+  const data = require('./data.json');
   app.get('/api/notes', (req, res) => {
     const notes = [];
-    for (const key in model.notes) {
-      notes.push(model.notes[key]);
+    for (const key in data.notes) {
+      notes.push(data.notes[key]);
     }
     res.status(200).json(notes);
   });
