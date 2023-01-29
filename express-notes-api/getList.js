@@ -1,11 +1,6 @@
 /* eslint-disable no-console */
 function getList(app) {
-  const fs = require('fs');
-  let model = null;
-  fs.readFile('data.json', 'utf8', (err, data) => {
-    if (err) console.log('Error!');
-    model = JSON.parse(data);
-  });
+  const model = require('./data.json');
   app.get('/api/notes', (req, res) => {
     const notes = [];
     for (const key in model.notes) {
