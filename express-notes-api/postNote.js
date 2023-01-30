@@ -12,7 +12,7 @@ function postNote(app) {
         data.notes[data.nextId] = req.body;
         data.nextId++;
         dataJSON = JSON.stringify(data, null, 2);
-        fs.writeFile('data.json', dataJSON, 'utf-8', (err) => {
+        fs.writeFile('data.json', dataJSON, { flag: 'r+' }, (err) => {
           if (err) {
             console.error(err);
             res.status(500).json({ error: 'An unexpected error occurred.' });
