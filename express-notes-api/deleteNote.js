@@ -11,7 +11,7 @@ function deleteNote(app) {
       case data.notes[id] !== undefined:
         delete data.notes[id];
         dataJSON = JSON.stringify(data, null, 2);
-        fs.writeFile('data2.json', dataJSON, (err) => {
+        fs.writeFile('data.json', dataJSON, (err) => {
           if (err) {
             console.error(err);
             res.status(500).json({ error: 'An unexpected error occurred.' });
