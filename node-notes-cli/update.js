@@ -1,4 +1,4 @@
-const data = require('./data.json');
+let data = require('./data.json');
 const fs = require('fs');
 
 function update(id, updatedNote) {
@@ -7,9 +7,8 @@ function update(id, updatedNote) {
     return;
   }
   data.notes[id] = updatedNote;
-  let updatedData = data;
-  updatedData = JSON.stringify(updatedData, null, 2);
-  fs.writeFile('data.json', updatedData, 'utf-8', err => {
+  data = JSON.stringify(data, null, 2);
+  fs.writeFile('data.json', data, 'utf-8', err => {
     if (err) throw err;
   });
 }
