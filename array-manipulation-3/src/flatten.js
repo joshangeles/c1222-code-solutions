@@ -11,8 +11,12 @@ function flatten(array) {
   const flattenedArr = [];
   for (let i = 0; i < array.length; i++) {
     const element = array[i];
-    if (Array.isArray(element)) {
-      console.log(element);
+    if (!Array.isArray(element)) {
+      flattenedArr.push(element);
+    } else {
+      for (let k = 0; k < element.length; k++) {
+        flattenedArr.push(element[k]);
+      }
     }
   }
   return flattenedArr;
