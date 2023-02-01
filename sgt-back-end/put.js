@@ -1,9 +1,9 @@
 const db = require('./db');
 const { json, jsonError } = require('./status');
-const errorCheck = require('./errorCheck');
+const { validate } = require('./validate');
 
 function put(app) {
-  app.put('/api/grades/:gradeId', (req, res, next) => {
+  app.put('/api/grades/:gradeId', (req, res) => {
 
     const sql = `
       UPDATE grades
@@ -21,7 +21,7 @@ function put(app) {
     const gradeId = Number(req.params.gradeId);
     const params = [name, course, score, gradeId];
 
-    errorCheck(gradeId, name, course, score, req, res);
+    validate(gradeId, name, course, score, res);
     if (!res.headersSent) {
       db.query(sql, params)
         .then((result) => {

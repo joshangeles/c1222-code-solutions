@@ -1,9 +1,9 @@
 const db = require('./db');
 const { json, jsonError } = require('./status');
-const errorCheck = require('./errorCheck');
+const { validate } = require('./validate');
 
 function post(app) {
-  app.post('/api/grades', (req, res, next) => {
+  app.post('/api/grades', (req, res) => {
 
     const sql = `
       INSERT INTO "grades" ("name", "course", "score")
@@ -16,21 +16,20 @@ function post(app) {
     const course = req.body.course;
     const score = Number(req.body.score);
     const params = [name, course, score];
-    let gradeId;
 
-    errorCheck(gradeId ?? 'not required', name, course, score, req, res);
-
-    if (!res.headersSent) {
-      db.query(sql, params)
-        .then((result) => {
-          const grade = result.rows[0];
-          json(res, 201, grade);
-        })
-        .catch((err) => {
-          console.error(err);
-          jsonError(res, 500, 'An unexpected error occurred.');
-        });
+    if (!(validate('not required', name, course, score, res))) {
+      return;
     }
+
+    db.query(sql, params)
+      .then((result) => {
+        const grade = result.rows[0];
+        json(res, 201, grade);
+      })
+      .catch((err) => {
+        console.error(err);
+        jsonError(res, 500, 'An unexpected error occurred.');
+      });
 
   });
 }

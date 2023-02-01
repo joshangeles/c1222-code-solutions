@@ -1,9 +1,9 @@
 const db = require('./db');
 const { jsonError, sendStatus } = require('./status');
-const errorCheck = require('./errorCheck');
+const { validate } = require('./validate');
 
 function remove(app) {
-  app.delete('/api/grades/:gradeId', (req, res, next) => {
+  app.delete('/api/grades/:gradeId', (req, res) => {
 
     const sql = `
       DELETE
@@ -15,25 +15,22 @@ function remove(app) {
 
     const gradeId = Number(req.params.gradeId);
     const params = [gradeId];
-    const course = null;
-    const score = null;
-    const name = null;
 
-    errorCheck(gradeId, name ?? 'not required', course ?? 'not required', score ?? 'not required', req, res);
-
-    if (!res.headersSent) {
-      db.query(sql, params)
-        .then((result) => {
-          const grade = result.rows[0];
-          !grade
-            ? jsonError(res, 404, `Grade #${gradeId} not found!`)
-            : sendStatus(res, 204);
-        })
-        .catch((err) => {
-          console.error(err);
-          jsonError(res, 500, 'An unexpected error occurred.');
-        });
+    if (!(validate(gradeId, 'not required', 'not required', 'not required', res))) {
+      return;
     }
+
+    db.query(sql, params)
+      .then((result) => {
+        const grade = result.rows[0];
+        !grade
+          ? jsonError(res, 404, `Grade #${gradeId} not found!`)
+          : sendStatus(res, 204);
+      })
+      .catch((err) => {
+        console.error(err);
+        jsonError(res, 500, 'An unexpected error occurred.');
+      });
 
   });
 }
