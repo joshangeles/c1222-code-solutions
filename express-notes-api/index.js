@@ -10,11 +10,11 @@ const app = express();
 const expressJSON = express.json();
 app.use(expressJSON);
 
-getList(app);
-getId(app);
-postNote(app);
-deleteNote(app);
-updateNote(app);
+app.get('/api/notes', getList);
+app.get('/api/notes/:id', getId);
+app.post('/api/notes', postNote);
+app.delete('/api/notes/:id', deleteNote);
+app.put('api/notes/:id', updateNote);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
