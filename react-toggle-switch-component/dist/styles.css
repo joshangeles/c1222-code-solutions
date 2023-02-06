@@ -1,0 +1,38 @@
+#toggle-container {
+  width: 4rem;
+  height: 27px;
+  display: inline-block;
+  border-radius: 34px;
+  border-color: black;
+  position: relative;
+}
+
+label {
+  padding-left: 2rem;
+  font-size: larger;
+  font-family: Cedarville, sans-serif;
+}
+
+button {
+  padding: 0.75rem;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  border-color: black;
+}
+
+.on {
+  right: 0;
+}
+
+.off {
+  left: 0;
+}
+
+.bg-on {
+  background-color: #6aa84f;
+}
+
+.bg-off {
+  background-color: gainsboro;
+}
