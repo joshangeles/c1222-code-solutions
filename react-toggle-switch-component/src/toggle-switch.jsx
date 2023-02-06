@@ -11,17 +11,15 @@ export default function ToggleSwitch() {
   active ? className = 'on' : className = 'off';
   let bgColor = 'bg-off';
   active ? bgColor = 'bg-on' : bgColor = 'bg-off';
-
+  let activeLabel = 'Off';
+  active ? activeLabel = 'On' : activeLabel = 'Off';
   return (
-    <span id='toggle-container'
-          className={bgColor}
-    >
-      <button
-      onClick={handleClick}
-      className={className}
-      >
-
-      </button>
-    </span>
+    <>
+      <span id='toggle-container' className={bgColor}>
+        <button onClick={handleClick} className={className}>
+        </button>
+      </span>
+      <label>{activeLabel}</label>
+    </>
   );
 }
