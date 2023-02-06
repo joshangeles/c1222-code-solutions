@@ -7,17 +7,14 @@ export default function ToggleSwitch() {
     setActive(!active);
   }
 
-  let className = 'off';
-  active ? className = 'on' : className = 'off';
-  let bgColor = 'bg-off';
-  active ? bgColor = 'bg-on' : bgColor = 'bg-off';
-  let activeLabel = 'Off';
-  active ? activeLabel = 'On' : activeLabel = 'Off';
+  const className = active ? 'on' : 'off';
+  const bgColor = active ? 'bg-on' : 'bg-off';
+  const activeLabel = active ? 'On' : 'Off';
+
   return (
     <>
       <span id='toggle-container' className={bgColor}>
-        <button onClick={handleClick} className={className}>
-        </button>
+        <button onClick={handleClick} className={className} />
       </span>
       <label>{activeLabel}</label>
     </>
