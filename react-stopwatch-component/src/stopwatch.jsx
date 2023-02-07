@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
 
 export default function Stopwatch() {
-  const [play, setPlay] = useState(false);
   const [time, setTime] = useState(0);
-  const [intervalID, setIntervalID] = useState(0);
+  const [intervalID, setIntervalID] = useState(undefined);
 
   function handlePlay() {
-    clearInterval(intervalID);
-    setPlay(!play);
-    const id = setInterval(() => {
-      setTime((time) => time + 1);
-    }, 1000);
-    setIntervalID(id);
-    if (play) clearInterval(id);
+    if (intervalID) {
+      clearInterval(intervalID);
+      setIntervalID(undefined);
+    } else {
+      const id = setInterval(() => {
+        setTime((time) => time + 1);
+      }, 1000);
+      setIntervalID(id);
+    }
   }
 
   function handleTimeReset() {
-    if (!play) {
+    if (!intervalID) {
       setTime(0);
     }
   }
 
-  const currentIcon = play ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+  const currentIcon = intervalID ? 'fa-solid fa-pause' : 'fa-solid fa-play';
 
   return (
     <div id='stopwatch-container'>
