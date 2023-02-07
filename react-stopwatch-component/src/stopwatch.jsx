@@ -1,28 +1,34 @@
-// import React, { useState } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
 
-// let interval = null;
+export default function Stopwatch() {
+  const [play, setPlay] = useState(false);
+  const [time, setTime] = useState(0);
+  const [intervalID, setIntervalID] = useState(0);
 
-// export default function Stopwatch() {
-//   const [play, setPlay] = useState(false);
-//   const [time, setTime] = useState(0);
-//   if (interval) clearInterval(interval);
-//   function handlePlay() {
-//     setPlay(!play);
-//   }
+  function handlePlay() {
+    clearInterval(intervalID);
+    setPlay(!play);
+    const id = setInterval(() => {
+      setTime((time) => time + 1);
+    }, 1000);
+    setIntervalID(id);
+    if (play) clearInterval(id);
+  }
 
-//   // function handleTime() {
-//   //   interval = setInterval(setTime(time + 1), 1000);
-//   // }
+  function handleTimeReset() {
+    if (!play) {
+      setTime(0);
+    }
+  }
 
-//   const currentIcon = play ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+  const currentIcon = play ? 'fa-solid fa-pause' : 'fa-solid fa-play';
 
-//   return (
-//     <div id='stopwatch-container'>
-//       <button id='stopwatch'>{time}</button>
-//       <button id='play-button' onClick={handlePlay}>
-//         <i className={currentIcon} />
-//       </button>
-//     </div>
-//   );
-// }
+  return (
+    <div id='stopwatch-container'>
+      <button id='stopwatch' onClick={handleTimeReset}>{time}</button>
+      <button id='play-button' onClick={handlePlay}>
+        <i className={currentIcon} />
+      </button>
+    </div>
+  );
+}
