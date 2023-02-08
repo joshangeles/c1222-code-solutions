@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 button {
@@ -12,7 +13,7 @@ button {
 menu button {
   font-family: "Pokemon Solid", sans-serif;
   width: 100%;
-  padding: 0;
+  padding-left: 5%;
 }
 
 button:hover {
@@ -37,10 +38,15 @@ menu {
   z-index: 3;
   background-color: white;
   margin: 0;
-  padding: 0 1%;
+  padding: 0;
   list-style-type: none;
   font-family: "Pokemon Solid", sans-serif;
   height: 99.49vh;
+  border-right: 5px solid black;
+}
+
+h3 {
+  padding: 0 1rem;
 }
 
 #open-menu {
