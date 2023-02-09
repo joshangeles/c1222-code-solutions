@@ -5,9 +5,9 @@ export default function Accordion({ inputData }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div>
+    <>
       {inputData.map((entry) => Bellow(entry, activeIndex, setActiveIndex))}
-    </div>
+    </>
   );
 }
 
