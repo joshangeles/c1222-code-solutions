@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 export default function Accordion({ inputData }) {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(undefined);
 
   return (
     <>
@@ -15,7 +15,7 @@ function Bellow({ title, id, details }, activeIndex, setActiveIndex) {
 
   return (
     <div key={id} className='bellow' onClick={() => {
-      (activeIndex !== id) ? setActiveIndex(id) : setActiveIndex(0);
+      (activeIndex !== id) ? setActiveIndex(id) : setActiveIndex(undefined);
     }}>
       <h3>{title}</h3>
       <div hidden={activeIndex !== id}>{details}</div>
