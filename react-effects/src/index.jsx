@@ -10,9 +10,8 @@ function List() {
   // Your code here:
   //  - Read the items using `readItems` and update state so the list displays
 
-  const storedPromise = readItems();
-
   useEffect(() => {
+    const storedPromise = readItems();
     storedPromise.then((items) => {
       setItems(items);
       setIsLoading(false);
