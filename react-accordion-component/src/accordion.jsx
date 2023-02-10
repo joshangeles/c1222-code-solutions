@@ -6,19 +6,28 @@ export default function Accordion({ inputData }) {
 
   return (
     <>
-      {inputData.map((entry) => Bellow(entry, activeIndex, setActiveIndex))}
+      {inputData.map((entry) => {
+        return (
+          <Bellow
+              key={entry.id}
+              title={entry.title}
+              details={entry.details}
+            isActive={(activeIndex === entry.id)}
+            setActiveIndex={() => (activeIndex !== entry.id) ? setActiveIndex(entry.id) : setActiveIndex(undefined)} />
+        );
+      })}
     </>
   );
 }
 
-function Bellow({ title, id, details }, activeIndex, setActiveIndex) {
+function Bellow({ title, id, details, isActive, setActiveIndex }) {
 
   return (
-    <div key={id} className='bellow' onClick={() => {
-      (activeIndex !== id) ? setActiveIndex(id) : setActiveIndex(undefined);
-    }}>
+    <div key={id} className='bellow' onClick={setActiveIndex}>
       <h3>{title}</h3>
-      <div hidden={activeIndex !== id}>{details}</div>
+      {
+      isActive && <div>{details}</div>
+      }
     </div>
   );
 }
