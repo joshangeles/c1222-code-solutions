@@ -12,7 +12,7 @@ export default function Carousel({ images }) {
     setActiveIndex((current) => ((current - 1) + images.length) % images.length);
   }
 
-  const cachedHandleNext = useCallback(handleNext);
+  const cachedHandleNext = useCallback(handleNext, [activeIndex, images]);
 
   useEffect(() => {
     const autoNext = setInterval(cachedHandleNext, 3000);
