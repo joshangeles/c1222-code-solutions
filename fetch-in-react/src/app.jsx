@@ -5,6 +5,7 @@ import UserList from './user-list';
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [users, setUsers] = useState([]);
+  const [hasError, setHasError] = useState(false);
 
   /* your code here (hint: useEffect) */
   useEffect(() => {
@@ -18,11 +19,14 @@ export default function App() {
       })
       .catch((error) => {
         console.error(error);
-        alert('Something went wrong!');
+        setIsLoading(false);
+        setHasError(true);
       });
   }, []);
 
   return isLoading
     ? <p>Loading...</p>
-    : <UserList users={users} />;
+    : hasError
+      ? <h1>Something went wrong coach!</h1>
+      : <UserList users={users}/>;
 }
