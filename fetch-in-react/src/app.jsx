@@ -18,6 +18,7 @@ export default function App() {
       })
       .catch((error) => {
         console.error(error);
+        alert('Something went wrong!');
       });
   }, []);
 
