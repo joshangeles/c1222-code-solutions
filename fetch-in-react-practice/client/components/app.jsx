@@ -19,9 +19,8 @@ export default function App() {
       .then((response) => response.json())
       .then((data) => {
         setTodos(data);
-        console.log(todos);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(error));
   }, []);
 
   function addTodo(newTodo) {
@@ -54,7 +53,7 @@ export default function App() {
         updatedTodos.push(data);
         setTodos(updatedTodos);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(error));
 
   }
 
