@@ -1,5 +1,5 @@
 /* eslint-disable prefer-const */
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 export default function Carousel({ images }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -11,6 +11,14 @@ export default function Carousel({ images }) {
   function handlePrev(e) {
     setActiveIndex((current) => ((current - 1) + images.length) % images.length);
   }
+
+  const cachedHandleNext = useCallback(handleNext, [activeIndex, images]);
+
+  useEffect(() => {
+    const autoNext = setInterval(cachedHandleNext, 3000);
+
+    return () => clearInterval(autoNext);
+  }, [activeIndex]);
 
   const circles = images.map((image) => {
     return (
