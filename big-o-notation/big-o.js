@@ -36,7 +36,7 @@ function uniqueQuadratic(words) {
         isUnique = false;           // n * n = O(n^2)
       }
     }
-    if (isUnique) {                 // 1n * n = O(n^2)
+    if (isUnique) {                 // 1 * n = O(n)
       unique[unique.length] = word; // 2n * n = O(2n^2)
     }
   }
