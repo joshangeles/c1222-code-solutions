@@ -2,9 +2,11 @@
 
 function take2nd(queue) {
   if (queue.peek() === undefined) return;
-  const front = queue.peek();
+  const front = queue.dequeue();
+  if (queue.peek() === undefined) return front;
+  const second = queue.peek();
   queue.dequeue();
-  const almostFront = queue.peek();
-  if (!almostFront) return front;
   queue.enqueue(front);
+  return second;
+
 }
